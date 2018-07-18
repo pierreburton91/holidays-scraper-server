@@ -1,0 +1,34 @@
+{
+  "name": "holidays-scraper-server",
+  "version": "1.0.0",
+  "description": "Scrape the web to find holidays offers",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pierreburton91/holidays-scraper-server.git"
+  },
+  "keywords": [
+    "Holidays",
+    "Search",
+    "Web",
+    "Scraping",
+    "Easy",
+    "Lazy",
+    "Faster"
+  ],
+  "author": "Pierre Burton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pierreburton91/holidays-scraper-server/issues"
+  },
+  "homepage": "https://github.com/pierreburton91/holidays-scraper-server#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "pug": "^2.0.3",
+    "puppeteer": "^1.6.0"
+  }
+}

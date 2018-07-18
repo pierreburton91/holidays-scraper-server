@@ -1,0 +1,9 @@
+html
+  head
+    title Holidays scraper test page
+  body
+    h1 Holidays scrapper
+    form(action="/search", method="get")
+      input(type="number", name="budget")
+      input(type="submit", value="search")
+    pre!= result
