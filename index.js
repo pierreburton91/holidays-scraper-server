@@ -1,6 +1,5 @@
 const express = require('express')
 const puppeteer = require('puppeteer')
-const pug = require('pug')
 const app = express()
 
 app.set('view engine', 'pug');
@@ -23,7 +22,7 @@ app.get('/search', async function (req, res) {
         return length
     }, offersSelector)
 
-    let offersThatMatch = {results:[]}
+    let offersThatMatch = []
     
     for (i = 1; i < resultsLength; i++) {
         let indexedBudgetSelector = budgetSelector.replace('INDEX', i)
@@ -32,13 +31,13 @@ app.get('/search', async function (req, res) {
             return value
         }, indexedBudgetSelector)
         if (result <= budget) {
-            offersThatMatch.results.push(result)
+            offersThatMatch.push(result)
         }
     }
     
 
     await browser.close()
-    await res.render('home', {'result': JSON.stringify(offersThatMatch)})
+    await res.render('home', {'result': offersThatMatch})
 })
 
 app.listen(3000, function () {})

@@ -6,4 +6,5 @@ html
     form(action="/search", method="get")
       input(type="number", name="budget")
       input(type="submit", value="search")
-    pre!= result
+    each val in result
+      div= val
