@@ -4,8 +4,7 @@
   "description": "Scrape the web to find holidays offers",
   "main": "index.js",
   "scripts": {
-    "test": "test",
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -30,5 +29,8 @@
     "express": "^4.16.3",
     "pug": "^2.0.3",
     "puppeteer": "^1.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
   }
 }
