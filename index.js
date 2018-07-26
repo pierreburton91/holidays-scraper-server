@@ -9,7 +9,7 @@ app.get('/', function (req, res) {
 })
 
 app.get('/search', async function (req, res) {
-    req.setTimeout(0);
+    req.setTimeout(0); // As the request can be very long, the page should never timeout
     const budget = req.query.budget 
     const browser = await puppeteer.launch({slowMo: 10}) // SloMo to wait for content load
     const page = await browser.newPage()
@@ -56,7 +56,7 @@ app.get('/search', async function (req, res) {
             await page.waitForNavigation({
                 waitUntil: 'networkidle2',
                 timeout: 0
-            })
+            }) // Always wait for page to load except on network failure
         }
         p++
     } while (isNextPageAvailable)
